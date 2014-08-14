@@ -78,6 +78,18 @@
 
 
 
+###  http://www.semanticweb.org/amitchell/ontologies/nice_all#hasCostResourceStatement
+
+:hasCostResourceStatement rdf:type owl:ObjectProperty ;
+                          
+                          rdfs:range :CostResourceStatement ;
+                          
+                          rdfs:domain :QualityStatement ;
+                          
+                          owl:inverseOf :isCostResourceStatementOf .
+
+
+
 ###  http://www.semanticweb.org/amitchell/ontologies/nice_all#hasDataSource
 
 :hasDataSource rdf:type owl:ObjectProperty ;
@@ -287,6 +299,16 @@
                   rdfs:domain :AuditMeasure ;
                   
                   rdfs:range :Recommendation .
+
+
+
+###  http://www.semanticweb.org/amitchell/ontologies/nice_all#isCostResourceStatementOf
+
+:isCostResourceStatementOf rdf:type owl:ObjectProperty ;
+                           
+                           rdfs:domain :CostResourceStatement ;
+                           
+                           rdfs:range :QualityStatement .
 
 
 
@@ -791,6 +813,22 @@
 
 
 
+###  http://www.semanticweb.org/amitchell/ontologies/nice_all#CostImpactCommissioningAssessment
+
+:CostImpactCommissioningAssessment rdf:type owl:Class ;
+                                   
+                                   rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> .
+
+
+
+###  http://www.semanticweb.org/amitchell/ontologies/nice_all#CostResourceStatement
+
+:CostResourceStatement rdf:type owl:Class ;
+                       
+                       rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> .
+
+
+
 ###  http://www.semanticweb.org/amitchell/ontologies/nice_all#DataSource
 
 :DataSource rdf:type owl:Class ;
@@ -1015,7 +1053,9 @@
 
 
 [ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :DataSource
+  owl:members ( :CostImpactCommissioningAssessment
+                :CostResourceStatement
+                :DataSource
                 :EvidenceStatement
                 :Guideline
                 :Measure
